@@ -9,8 +9,13 @@
 <body>
     <button class="btn">asdf</button>
     <script>
-        let btn = document.querySelector('btd')
-        
+        let btn = document.querySelector('.btn')
+
+        btn.addEventListener('click', async (event) =>{
+            let data = await fetch('http://localhost:3000/api/users')
+            let res = await data.json()
+            console.log(await res);
+        })
     </script>
 </body>
 </html>
