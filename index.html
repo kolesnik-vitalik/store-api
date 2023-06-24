@@ -12,7 +12,7 @@
         let btn = document.querySelector('.btn')
 
         btn.addEventListener('click', async (event) =>{
-            let data = await fetch('http://localhost:3000/api/users')
+            let data = await fetch('https://kolesnik-vitalik.github.io/store-api/api/users')
             let res = await data.json()
             console.log(await res);
         })
