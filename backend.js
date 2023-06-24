@@ -1,15 +1,15 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 const PORT = 3000
 
-app.get('/', (req,res)=>{
-    res.send('Hello')
-})
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '\index.html'));
+  });
 
-app.get('/hello', (req, res)=>{
-    res.send('Hello world')
-})
 
 app.listen(PORT, ()=>{
     console.log(`Express server is started on http://localhost:${PORT}`)
 })
+
+console.log(__dirname)
