@@ -8,13 +8,22 @@
 </head>
 <body>
     <button class="btn">asdf</button>
+    <div class="data"></div>
     <script>
-        let btn = document.querySelector('.btn')
+        const btn = document.querySelector('.btn')
+        const data = document.querySelector('.data')
+
+        async function getData(){
+            let data = await fetch('http://localhost:3000/api/users')
+            let res = await data.json()
+            return res;
+        }
 
         btn.addEventListener('click', async (event) =>{
-            let data = await fetch('https://kolesnik-vitalik.github.io/store-api/api/users')
-            let res = await data.json()
-            console.log(await res);
+            // console.log(await a)
+            let u = await getData()
+            console.log(u)
+            data.innerHTML = `Name: ${u.name} LastName: ${u.lastName}`
         })
     </script>
 </body>
