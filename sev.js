@@ -16,14 +16,14 @@ app.use('/api/users', function(req, res, next) {
     res.json(users)
   })
 
-  app.post('/api/user', async (req,res)=>{
-    const {name} = req.body
-    const newPerson = await db.query('INSERT INTO persons (name) values ($1) RETURNING *', [name])
-    res.json(newPerson.rows[0])
+  // app.post('/api/user', async (req,res)=>{
+  //   const {name} = req.body
+  //   const newPerson = await db.query('INSERT INTO persons (name) values ($1) RETURNING *', [name])
+  //   res.json(newPerson.rows[0])
   
-  })
+  // })
 
-  app.get('/api/user', async(req,res)=>{
+  app.get('/api/shoes', async(req,res)=>{
     const allField = await db.query('SELECT * FROM shoe')
     res.json(allField.rows[0])
   })
