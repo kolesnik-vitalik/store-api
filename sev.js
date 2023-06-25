@@ -24,7 +24,7 @@ app.use('/api/users', function(req, res, next) {
   })
 
   app.get('/api/user', async(req,res)=>{
-    const allField = await db.query('SELECT * FROM persons')
+    const allField = await db.query('SELECT * FROM shoe')
     res.json(allField.rows[0])
   })
 
