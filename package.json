@@ -1,12 +1,17 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.11.0"
   },
   "name": "store-api",
   "version": "1.0.0",
   "main": "backend.js",
   "repository": "https://github.com/kolesnik-vitalik/store-api.git",
   "author": "<kolesnik.vitalik21@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
