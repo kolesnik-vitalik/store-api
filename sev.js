@@ -12,6 +12,7 @@ let users = {
   name: 'Vitaliy',
   lastName: 'Kolesnik'
 }
+
 app.use('/api/users', function(req, res, next) {
     res.json(users)
   })
@@ -26,6 +27,12 @@ app.use('/api/users', function(req, res, next) {
   app.get('/api/shoes', async(req,res)=>{
     const allField = await db.query('SELECT * FROM shoe')
     res.json(allField.rows[0])
+  })
+
+  app.get('/api/shoes/:id', async(req,res)=>{
+    const id = req.params.id
+    const getShoesById = await db.query('SELECT * FROM shoe WHERE id = $1', [id])
+    res.json(getShoesById.rows[0])
   })
 
 app.listen(PORT, ()=>{
