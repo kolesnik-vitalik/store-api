@@ -26,7 +26,7 @@ app.use('/api/users', function(req, res, next) {
 
   app.get('/api/shoes', async(req,res)=>{
     const allField = await db.query('SELECT * FROM shoe')
-    res.json(allField.rows[0])
+    res.json(allField.rows)
   })
 
   app.get('/api/shoes/:id', async(req,res)=>{
