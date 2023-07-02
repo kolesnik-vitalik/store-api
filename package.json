@@ -7,7 +7,7 @@
   },
   "name": "store-api",
   "version": "1.0.0",
-  "main": "backend.js",
+  "main": "sev.js",
   "repository": "https://github.com/kolesnik-vitalik/store-api.git",
   "author": "<kolesnik.vitalik21@gmail.com>",
   "license": "MIT",
